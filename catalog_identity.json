@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Syndicate Wars",
+    "id": "SLUS-00262",
+    "boot_exe": "SLUS_002.62"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Syndicate Wars (USA).cue",
+    "bin_name": "Syndicate Wars (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 276153024,
+      "md5": "ddaab82f42c2e2fc9001af4cb43d71eb",
+      "sha1": "1876f4a97c8c0d30a6d895525484e9c6b11f4ee8",
+      "crc32": "c877b304"
+    },
+    "disc_fp": "c8729dc6b55cf5e6fec34fba1bf3e2dc48ba0038e8ba658df64542e594dd4789"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x800A96AC",
+    "text_size": "0x000C8000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1165,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "syndicate-wars-psx",
+  "name": "Syndicate Wars",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "syndicate-wars-recomp",
+  "rom_identity": {
+    "crc32": [
+      "c877b304"
+    ],
+    "md5": [
+      "ddaab82f42c2e2fc9001af4cb43d71eb"
+    ],
+    "sha1": [
+      "1876f4a97c8c0d30a6d895525484e9c6b11f4ee8"
+    ],
+    "disc_serials": [
+      "SLUS-00262"
+    ],
+    "sizes": [
+      276153024
+    ],
+    "filenames": [
+      "Syndicate Wars (USA).cue",
+      "Syndicate Wars (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "c8729dc6b55cf5e6fec34fba1bf3e2dc48ba0038e8ba658df64542e594dd4789"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/syndicate-wars-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "syndicate-wars-*-windows-x64.zip",
+      "linux-x64": "syndicate-wars-*-linux-x64.zip",
+      "macos-arm64": "syndicate-wars-*-macos-arm64.zip",
+      "macos-x64": "syndicate-wars-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "syndicate_wars.exe",
+    "linux": "syndicate_wars",
+    "macos": "syndicate_wars"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/syndicate-wars-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

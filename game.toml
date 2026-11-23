@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Syndicate Wars"
+id = "SLUS-00262"
+players = 1
+exe = "disc/SLUS_002.62"
+disc = "disc/Syndicate Wars (USA).cue"
+discs = ["disc/Syndicate Wars (USA).cue"]
+disc_serials = ["SLUS-00262"]
+load_address = "0x80010000"
+entry_pc = "0x800A96AC"
+text_size = "0x000C8000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Syndicate Wars (USA).bin"
+cue_name = "Syndicate Wars (USA).cue"
+boot_exe = "SLUS_002.62"
+known_sizes = [276153024]
+known_md5 = [
+  "ddaab82f42c2e2fc9001af4cb43d71eb",
+]
+known_sha1 = [
+  "1876f4a97c8c0d30a6d895525484e9c6b11f4ee8",
+]
+known_crc32 = [
+  "c877b304",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Syndicate Wars Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "c8729dc6b55cf5e6fec34fba1bf3e2dc48ba0038e8ba658df64542e594dd4789"
